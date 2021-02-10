@@ -10955,3 +10955,14 @@ a.text-dark:focus {
   color: white;
 }
 
+footer {
+  border-top: 1px solid #535353;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  height: 60px;
+}
+
+.non-footer {
+  min-height: calc(100vh - 60px);
+}
+
