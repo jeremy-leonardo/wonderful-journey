@@ -19,10 +19,10 @@
     <div id="app">
         <header>
             <div class="hero d-flex align-items-center justify-content-center">
-                Woderful Journey
+                Wonderful Journey
             </div>
         </header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <b>Wonderful Journey</b>
