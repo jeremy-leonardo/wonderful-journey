@@ -13,7 +13,7 @@
                 <div class="card-header">{{ __('New Blog Article') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('article.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('user.article.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
