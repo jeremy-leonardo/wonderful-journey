@@ -47,6 +47,14 @@
                                 </a>
                             </li>
                             @endif
+
+                            @if(Auth::user() && Auth::user()->role == App\User::ADMIN_ROLE)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.user.index') }}">
+                                    {{ __('Users') }}
+                                </a>
+                            </li>
+                            @endif
                         </ul>
 
                         <!-- Right Side Of Navbar -->
