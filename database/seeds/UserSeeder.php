@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -42,5 +43,16 @@ class UserSeeder extends Seeder
                 'password' => bcrypt("jeremy12345"),
             ],
         ]);
+
+        $faker = Faker::create('id_ID');
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('users')->insert([
+                'name' => $faker->name,
+                'email' => $faker->freeEmail,
+                'phone' => $faker->phoneNumber,
+                'role' => 'user',
+                'password' => bcrypt("password12345"),
+            ]);
+        }
     }
 }
