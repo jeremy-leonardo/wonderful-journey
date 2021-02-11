@@ -35,7 +35,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            @if(Auth::user()->role == App\User::USER_ROLE)
+                            @if(Auth::user() && Auth::user()->role == App\User::USER_ROLE)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.article.index') }}">
                                     {{ __('My Blogs') }}
@@ -66,7 +66,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @if(Auth::user()->role == App\User::USER_ROLE)
+                                    @if(Auth::user() && Auth::user()->role == App\User::USER_ROLE)
                                     <a class="dropdown-item" href="{{ route('user.user.edit') }}">
                                         {{ __('Edit Profile') }}
                                     </a>
