@@ -11,7 +11,7 @@ class CheckIsUser
     public function handle($request, Closure $next)
     {
         if (! $request->expectsJson()) {
-            if(Auth::user()->role == User::USER_ROLE) {
+            if(Auth::user() && Auth::user()->role == User::USER_ROLE) {
                 return $next($request);
             }
             return abort(401);

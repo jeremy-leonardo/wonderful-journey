@@ -29,3 +29,6 @@ Route::delete('/user/article/{id}', 'ArticleUserController@destroy')->name('user
 
 Route::get('/user/edit', 'UserUserController@edit')->name('user.user.edit');
 Route::put('/user', 'UserUserController@update')->name('user.user.update');
+
+Route::get('/admin/user', 'UserAdminController@index')->name('admin.user.index');
+Route::delete('/admin/user/{id}', 'UserAdminController@destroy')->name('admin.user.destroy');
