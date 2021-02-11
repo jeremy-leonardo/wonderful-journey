@@ -9,7 +9,7 @@
             <h2>{{$article->title}}</h2>
             <p>
                 {{substr($article->description,0,90)}} ...
-                <a href="">
+                <a href="{{route('article.show', ['id' => $article->id])}}">
                     Full story
                 </a>
             </p>

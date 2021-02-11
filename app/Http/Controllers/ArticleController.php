@@ -79,4 +79,11 @@ class ArticleController extends Controller
             return back()->with(['status' => 'Article added successfully']);
         }
     }
+
+    public function show(int $id)
+    {
+        return view('article.show', [
+            'article' => Article::find($id),
+        ]);
+    }
 }

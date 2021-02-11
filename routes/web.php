@@ -20,3 +20,4 @@ Route::get('/welcome', function() {return view('welcome');})->name('welcome')->m
 Route::get('/', 'ArticleController@index')->name('home');
 Route::get('/article/create', 'ArticleController@create')->name('article.create')->middleware('auth');
 Route::post('/article/create', 'ArticleController@store')->name('article.store')->middleware('auth');
+Route::get('/article/{id}', 'ArticleController@show')->name('article.show');
