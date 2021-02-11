@@ -26,3 +26,6 @@ Route::get('/user/article', 'ArticleUserController@index')->name('user.article.i
 Route::get('/user/article/create', 'ArticleUserController@create')->name('user.article.create');
 Route::post('/user/article', 'ArticleUserController@store')->name('user.article.store');
 Route::delete('/user/article/{id}', 'ArticleUserController@destroy')->name('user.article.destroy');
+
+Route::get('/user/edit', 'UserUserController@edit')->name('user.user.edit');
+Route::put('/user', 'UserUserController@update')->name('user.user.update');

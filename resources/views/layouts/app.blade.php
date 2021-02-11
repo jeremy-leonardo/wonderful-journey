@@ -37,7 +37,14 @@
                         <ul class="navbar-nav mr-auto">
                             @if(Auth::user()->role == App\User::USER_ROLE)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.article.index') }}">{{ __('My Blogs') }}</a>
+                                <a class="nav-link" href="{{ route('user.article.index') }}">
+                                    {{ __('My Blogs') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.user.edit') }}">
+                                    {{ __('Profile') }}
+                                </a>
                             </li>
                             @endif
                         </ul>
@@ -63,10 +70,15 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    @if(Auth::user()->role == App\User::USER_ROLE)
+                                    <a class="dropdown-item" href="{{ route('user.user.edit') }}">
+                                        {{ __('Edit Profile') }}
+                                    </a>
+                                    @endif
                                 </div>
                             </li>
                             @endguest
