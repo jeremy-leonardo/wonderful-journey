@@ -54,6 +54,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div>
+                        {{ $articles->withQueryString()->links() }}
+                    </div>
                     @else
                     <div class="text-center">
                         You have not posted any blog/ article yet.
