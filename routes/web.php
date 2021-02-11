@@ -20,5 +20,7 @@ Route::get('/welcome', function() {return view('welcome');})->name('welcome')->m
 Route::get('/', 'ArticleController@index')->name('home');
 Route::get('/article', 'ArticleController@index')->name('article.index');
 Route::get('/article/{id}', 'ArticleController@show')->name('article.show');
+Route::get('/user/article', 'ArticleUserController@index')->name('user.article.index');
 Route::get('/user/article/create', 'ArticleUserController@create')->name('article.create');
-Route::post('/user/article/create', 'ArticleUserController@store')->name('article.store');
+Route::post('/user/article', 'ArticleUserController@store')->name('article.store');
+Route::delete('/user/article/{id}', 'ArticleUserController@destroy')->name('user.article.destroy');

@@ -6,6 +6,7 @@ use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -28,9 +29,9 @@ class ArticleUserController extends Controller
      */
     public function index()
     {
-        // return view('public.article.index', [
-        //     'articles' => Article::paginate(9),
-        // ]);
+        return view('user.article.index', [
+            'articles' => Article::where('user_id', '=', Auth::user()->id)->paginate(10),
+        ]);
     }
 
     protected function rules(Request $request)
@@ -60,7 +61,7 @@ class ArticleUserController extends Controller
             $img = null;
             if ($request->file('image')) {
                 $splitted = explode(".", $request->file('image')->getClientOriginalName());
-                $ext = $splitted[sizeof($splitted)-1];
+                $ext = $splitted[sizeof($splitted) - 1];
                 $file = $request->file('image');
                 $dir = 'images/article';
                 $newname = Str::uuid()->toString() . "." . $ext;
@@ -80,4 +81,16 @@ class ArticleUserController extends Controller
         }
     }
 
+    public function destroy(int $id)
+    {
+        $article = Article::find($id);
+        if ($article->user_id != Auth::user()->id) {
+            return back()->with(['error' => 'You can not delete an article created by other user']);
+        }
+        if ($article->image) {
+            File::delete($article->image);
+        }
+        $article->delete();
+        return back()->with(['status' => 'Article deleted successfully']);
+    }
 }
