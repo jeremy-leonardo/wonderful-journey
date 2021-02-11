@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
 
+    @if(count($articles) > 0)
     <div class="row">
         @foreach($articles as $article)
         <div class="col-md-4 mt-4">
@@ -20,6 +21,11 @@
     <div class="row justify-content-md-center mt-4">
         {{ $articles->withQueryString()->links() }}
     </div>
+    @else
+    <div class="text-center pt-5 pb-5">
+        Blog/ article doesn't exist yet.
+    </div>
+    @endif
 
 </div>
 @endsection
