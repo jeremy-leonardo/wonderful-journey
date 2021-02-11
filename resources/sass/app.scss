@@ -29,3 +29,12 @@ footer {
 .non-footer {
     min-height: calc(100vh - 60px);
 }
+
+.pagination {
+    .page-item-disabled, .page-item:not(.active) {
+        .page-link{
+            background: #777777 !important;
+            color: white !important;
+        }
+    }
+}
