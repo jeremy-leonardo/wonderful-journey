@@ -14,7 +14,8 @@
             <p>
                 {{$article->description}}
             </p>
-            <p>Category: <a href="">{{$article->category->name}}</a></p>
+            <p class="mb-5">Category: <a href="">{{$article->category->name}}</a></p>
+            <a href="{{url()->previous()}}"><button type="button" class="btn btn-secondary btn-sm" action="action">← Back</button></a><a href="/"></a>
         </div>
     </div>
 
