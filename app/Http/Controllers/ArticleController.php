@@ -29,7 +29,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('public.article.index', [
-            'articles' => Article::paginate(9),
+            'articles' => Article::paginate(6),
         ]);
     }
 
@@ -43,7 +43,7 @@ class ArticleController extends Controller
     public function indexByCategory(int $category_id)
     {
         return view('public.article.index', [
-            'articles' => Article::where('category_id', '=', $category_id)->paginate(9),
+            'articles' => Article::where('category_id', '=', $category_id)->paginate(6),
             'category' => Category::find($category_id),
         ]);
     }
