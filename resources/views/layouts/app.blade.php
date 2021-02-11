@@ -66,6 +66,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @if(Auth::user()->role == App\User::USER_ROLE)
+                                    <a class="dropdown-item" href="{{ route('user.user.edit') }}">
+                                        {{ __('Edit Profile') }}
+                                    </a>
+                                    @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -73,12 +79,6 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-
-                                    @if(Auth::user()->role == App\User::USER_ROLE)
-                                    <a class="dropdown-item" href="{{ route('user.user.edit') }}">
-                                        {{ __('Edit Profile') }}
-                                    </a>
-                                    @endif
                                 </div>
                             </li>
                             @endguest
