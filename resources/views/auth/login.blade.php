@@ -12,6 +12,23 @@
                         @csrf
 
                         <div class="form-group row">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Login As') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control @error('role') is-invalid @enderror" name="role" id="role">
+                                    <option value="user" @if(old('role')=='user') selected @endif>User</option>
+                                    <option value="admin" @if(old('role')=='admin') selected @endif>Admin</option>
+                                </select>
+
+                                @error('role')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
