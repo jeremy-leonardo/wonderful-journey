@@ -39,7 +39,7 @@
                             @foreach($articles as $article)
                             <tr>
                                 <th scope="row">
-                                    {{$article->title}}
+                                    <a href="{{route('article.show', ['id' => $article->id])}}">{{$article->title}}</a>
                                 </th>
                                 <td>
                                     <form method="POST" action="{{ route('user.article.destroy', ['id' => $article->id]) }}">
