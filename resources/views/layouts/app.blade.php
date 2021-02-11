@@ -54,6 +54,11 @@
                                     {{ __('Users') }}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.article.index') }}">
+                                    {{ __('Blogs') }}
+                                </a>
+                            </li>
                             @endif
                         </ul>
 

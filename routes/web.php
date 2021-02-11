@@ -23,12 +23,14 @@ Route::get('/article', 'ArticleController@index')->name('article.index');
 Route::get('/article/{id}', 'ArticleController@show')->name('article.show');
 
 Route::get('/user/article', 'ArticleUserController@index')->name('user.article.index');
+Route::delete('/user/article/{id}', 'ArticleUserController@destroy')->name('user.article.destroy');
 Route::get('/user/article/create', 'ArticleUserController@create')->name('user.article.create');
 Route::post('/user/article', 'ArticleUserController@store')->name('user.article.store');
-Route::delete('/user/article/{id}', 'ArticleUserController@destroy')->name('user.article.destroy');
 
 Route::get('/user/edit', 'UserUserController@edit')->name('user.user.edit');
 Route::put('/user', 'UserUserController@update')->name('user.user.update');
 
 Route::get('/admin/user', 'UserAdminController@index')->name('admin.user.index');
 Route::delete('/admin/user/{id}', 'UserAdminController@destroy')->name('admin.user.destroy');
+Route::get('/admin/article', 'ArticleAdminController@index')->name('admin.article.index');
+Route::delete('/admin/article/{id}', 'ArticleAdminController@destroy')->name('admin.article.destroy');
