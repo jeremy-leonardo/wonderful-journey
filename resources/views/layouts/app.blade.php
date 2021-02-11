@@ -36,8 +36,14 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
 
+                            <li class="nav-item">
+                                <a class="nav-link {{ Route::currentRouteName() === 'home' ? 'active' : '' }}" href="{{ route('home') }}">
+                                    {{ __('Home') }}
+                                </a>
+                            </li>
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle {{ Route::currentRouteName() === 'article.index-by-category' ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Category
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -46,20 +52,21 @@
                                     @endforeach
                                 </div>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('about') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'about' ? 'active' : '' }}" href="{{ route('about') }}">
                                     {{ __('About') }}
                                 </a>
                             </li>
 
                             @if(Auth::user() && Auth::user()->role == App\User::USER_ROLE)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.article.index') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'user.article.index' ? 'active' : '' }}" href="{{ route('user.article.index') }}">
                                     {{ __('My Blogs') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.user.edit') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'user.user.edit' ? 'active' : '' }}" href="{{ route('user.user.edit') }}">
                                     {{ __('Profile') }}
                                 </a>
                             </li>
@@ -67,12 +74,12 @@
 
                             @if(Auth::user() && Auth::user()->role == App\User::ADMIN_ROLE)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.user.index') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'admin.user.index' ? 'active' : '' }}" href="{{ route('admin.user.index') }}">
                                     {{ __('Users') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.article.index') }}">
+                                <a class="nav-link {{ Route::currentRouteName() === 'admin.article.index' ? 'active' : '' }}" href="{{ route('admin.article.index') }}">
                                     {{ __('Blogs') }}
                                 </a>
                             </li>
@@ -85,10 +92,10 @@
                             <!-- Authentication Links -->
                             @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link {{ Route::currentRouteName() === 'login' ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link {{ Route::currentRouteName() === 'register' ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                             @else
                             <li class="nav-item dropdown">
