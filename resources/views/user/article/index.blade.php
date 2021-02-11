@@ -19,6 +19,15 @@
 
                 <div class="card-body">
 
+                    <div class="text-center mb-4">
+                        <a href="{{ route('user.article.create') }}">
+                            <button class="btn btn-primary" type="submit">
+                                + Create Blog
+                            </button>
+                        </a>
+                    </div>
+
+                    @if(count($articles) > 0)
                     <table class="table table-dark">
                         <thead>
                             <tr>
@@ -45,6 +54,12 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @else
+                    <div class="text-center">
+                        You have not posted any blog/ article yet.
+                    </div>
+                    @endif
+
 
                 </div>
             </div>
