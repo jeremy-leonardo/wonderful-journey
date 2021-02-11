@@ -15,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('/', 'ArticleController@index')->name('home');
 Route::get('/welcome', function() {return view('welcome');})->name('welcome')->middleware('auth');
+
+Route::get('/', 'ArticleController@index')->name('home');
+Route::get('/article/create', 'ArticleController@create')->name('article.create')->middleware('auth');
+Route::post('/article/create', 'ArticleController@store')->name('article.store')->middleware('auth');
