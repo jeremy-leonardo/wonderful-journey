@@ -46,6 +46,11 @@
                                     @endforeach
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('about') }}">
+                                    {{ __('About') }}
+                                </a>
+                            </li>
 
                             @if(Auth::user() && Auth::user()->role == App\User::USER_ROLE)
                             <li class="nav-item">
@@ -72,6 +77,7 @@
                                 </a>
                             </li>
                             @endif
+
                         </ul>
 
                         <!-- Right Side Of Navbar -->
