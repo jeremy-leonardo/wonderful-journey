@@ -21,6 +21,7 @@ Route::get('/', 'ArticleController@index')->name('home');
 
 Route::get('/article', 'ArticleController@index')->name('article.index');
 Route::get('/article/{id}', 'ArticleController@show')->name('article.show');
+Route::get('/article/category/{category_id}', 'ArticleController@indexByCategory')->name('article.index-by-category');
 
 Route::get('/user/article', 'ArticleUserController@index')->name('user.article.index');
 Route::delete('/user/article/{id}', 'ArticleUserController@destroy')->name('user.article.destroy');

@@ -39,4 +39,12 @@ class ArticleController extends Controller
             'article' => Article::find($id),
         ]);
     }
+    
+    public function indexByCategory(int $category_id)
+    {
+        return view('public.article.index', [
+            'articles' => Article::where('category_id', '=', $category_id)->paginate(9),
+            'category' => Category::find($category_id),
+        ]);
+    }
 }
