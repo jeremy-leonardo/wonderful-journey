@@ -42,4 +42,9 @@ class User extends Authenticatable
         'role' => self::DEFAULT_ROLE,
     ];
 
+    public function articles()
+    {
+        return $this->hasMany('App\Article');
+    }
+
 }
