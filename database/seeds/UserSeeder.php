@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
@@ -20,6 +21,8 @@ class UserSeeder extends Seeder
                 'phone' => "08123123",
                 'role' => "admin",
                 'password' => bcrypt("admin12345"),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'name' => "Anto",
@@ -27,6 +30,8 @@ class UserSeeder extends Seeder
                 'phone' => "08421421",
                 'role' => "user",
                 'password' => bcrypt("anto12345"),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'name' => "Budi",
@@ -34,6 +39,8 @@ class UserSeeder extends Seeder
                 'phone' => "084221421",
                 'role' => "user",
                 'password' => bcrypt("budi12345"),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'name' => "Jeremy",
@@ -41,6 +48,8 @@ class UserSeeder extends Seeder
                 'phone' => "08211421",
                 'role' => "user",
                 'password' => bcrypt("jeremy12345"),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
         ]);
 
@@ -52,6 +61,8 @@ class UserSeeder extends Seeder
                 'phone' => $faker->phoneNumber,
                 'role' => 'user',
                 'password' => bcrypt("password12345"),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ]);
         }
     }
