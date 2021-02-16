@@ -41,7 +41,7 @@ class UserUserController extends Controller
         return Validator::make($request->all(), [
             'name' => ['required', 'string', 'min:2', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'phone' => ['required', 'string', 'max:20', Rule::unique('users')->ignore($user->id)],
+            'phone' => ['required', 'string', 'max:20', 'regex:/[0-9]{5}/', Rule::unique('users')->ignore($user->id)],
         ]);
     }
 
