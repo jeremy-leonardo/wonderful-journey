@@ -42,9 +42,10 @@ class ArticleController extends Controller
     
     public function indexByCategory(int $category_id)
     {
+        $category = Category::find($category_id);
         return view('public.article.index', [
-            'articles' => Article::where('category_id', '=', $category_id)->paginate(6),
-            'category' => Category::find($category_id),
+            'articles' => $category->articles()->paginate(6),
+            'category' => $category,
         ]);
     }
 }

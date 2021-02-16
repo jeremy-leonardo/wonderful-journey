@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -30,7 +31,7 @@ class ArticleUserController extends Controller
     public function index()
     {
         return view('user.article.index', [
-            'articles' => Article::where('user_id', '=', Auth::user()->id)->paginate(10),
+            'articles' => User::find(Auth::user()->id)->articles()->paginate(10),
         ]);
     }
 
