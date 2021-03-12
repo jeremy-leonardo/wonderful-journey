@@ -1,7 +1,11 @@
 # Wonderful Journey
 
-This is a simple blog created for COMP6144 Web Programming course.
+This is a simple blog created for COMP6144 Web Programming course final exam, created with Laravel.
 
-## Author
+## Screenshots
 
-2201731106 - Jeremy Leonardo
+![home](doc-images/home.png?raw=true "home")<br>
+![category](doc-images/category.png?raw=true "category")<br>
+![my-blogs](doc-images/my-blogs.png?raw=true "my-blogs")<br>
+![new-blog](doc-images/new-blog.png?raw=true "new-blog")<br>
+![login](doc-images/login.png?raw=true "login")<br>
